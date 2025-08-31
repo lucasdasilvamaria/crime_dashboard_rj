@@ -1,63 +1,62 @@
 # Crime Dashboard - Rio de Janeiro
 
-Este projeto é um **dashboard interativo** que visualiza estatísticas de crimes no estado do Rio de Janeiro. Os dados utilizados vêm de uma base histórica mensal por município, desde 2003, disponibilizada pelo governo. O objetivo do dashboard é permitir que o usuário explore os crimes ao longo do tempo, filtrando por faixa de anos e tipos de crimes.
+This project is an **interactive dashboard** that visualizes crime statistics in the state of Rio de Janeiro. The data comes from a historical monthly dataset by municipality, starting from 2003, provided by the government. The goal of the dashboard is to allow users to explore crimes over time, filtering by year range and crime types.
 
-> **Fonte dos dados:** os dados foram retirados do [dados.gov.br](https://dados.gov.br/dados/conjuntos-dados/isp-estatisticas-de-seguranca-publica) e podem ser baixados livremente em CSV.
-
----
-
-## 📊 Funcionalidades
-
-- Filtragem por **faixa de anos**.
-- Seleção de múltiplos tipos de crimes.
-- Visualização dinâmica:
-  - **Tabela interativa** com os dados filtrados.
-  - **Gráficos de linha** mostrando a tendência dos crimes selecionados.
-- Dashboard responsivo, executável em navegador via **Streamlit**.
+> **Data source:** the data was obtained from [dados.gov.br](https://dados.gov.br/dados/conjuntos-dados/isp-estatisticas-de-seguranca-publica) and can be freely downloaded in CSV format.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📊 Features
+
+* Filter by **year range**.
+* Select multiple crime types.
+* Dynamic visualization:
+
+  * **Interactive table** showing filtered data.
+  * **Line charts** showing trends for selected crimes.
+* Responsive dashboard, runnable in a browser via **Streamlit**.
+
+---
+
+## 📁 Project Structure
 
 ```
-
-crime\_dashboard\_rj/
+crime_dashboard_rj/
 │
 ├─ data/
-│   └─ BaseEstadoTaxaMes.csv       # CSV com os dados de crimes
+│   └─ BaseEstadoTaxaMes.csv       # CSV with crime data
 │
 ├─ src/
-│   └─ dashboard.py                # Código do dashboard
+│   └─ dashboard.py                # Dashboard code
 │
-├─ assets/                         # Imagens para README
+├─ assets/                         # Images for README
 │   ├─ 1.png
 │   ├─ 2.png
 │   └─ 3.png
 │
-├─ requirements.txt                # Bibliotecas necessárias
-├─ README.md                        # Este arquivo
+├─ requirements.txt                # Required libraries
+├─ README.md                        # This file
 └─ .gitignore
-
-````
+```
 
 ---
 
-## 🛠️ Instalação e Configuração
+## 🛠️ Installation and Setup
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/lucasdasilvamaria/crime_dashboard_rj.git
 cd crime_dashboard_rj
-````
+```
 
-2. **Crie um ambiente virtual** (opcional, mas recomendado):
+2. **Create a virtual environment** (optional but recommended):
 
 ```bash
 python -m venv .venv
 ```
 
-3. **Ative o ambiente virtual:**
+3. **Activate the virtual environment:**
 
 * Windows:
 
@@ -71,83 +70,80 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-4. **Instale as dependências:**
+4. **Install dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. **Verifique se o CSV `BaseEstadoTaxaMes.csv` está na pasta `data/`.**
-   Caso queira, você pode baixar o CSV diretamente do [dados.gov.br](https://dados.gov.br/dados/conjuntos-dados/isp-estatisticas-de-seguranca-publica).
+5. **Ensure the CSV `BaseEstadoTaxaMes.csv` is in the `data/` folder.**
+   You can also download it directly from [dados.gov.br](https://dados.gov.br/dados/conjuntos-dados/isp-estatisticas-de-seguranca-publica).
 
 ---
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-No terminal, dentro da pasta do projeto:
+In the terminal, inside the project folder:
 
 ```bash
 streamlit run src/dashboard.py
 ```
 
-Isso abrirá o dashboard no navegador padrão.
+This will open the dashboard in your default web browser.
 
 ---
 
-## ⚙️ Uso
+## ⚙️ Usage
 
-* **Faixa de anos:** Use o slider na barra lateral para escolher o período que deseja analisar.
-* **Seleção de crimes:** Marque os crimes que deseja visualizar no gráfico e na tabela.
-* **Tabela de dados:** Mostra todos os crimes selecionados para os anos filtrados.
-* **Gráfico de linha:** Mostra a tendência dos crimes selecionados ao longo do tempo.
+* **Year range:** Use the slider in the sidebar to select the period you want to analyze.
+* **Crime selection:** Check the crimes you want to visualize in the chart and table.
+* **Data table:** Shows all selected crimes for the filtered years.
+* **Line chart:** Shows the trend of selected crimes over time.
 
 ---
 
-## 🖼️ Exemplos de Visualização
+## 🖼️ Example Visualizations
 
-**Dashboard Principal:**
+**Main Dashboard:**
 
 ![Dashboard](assets/1.png)
 
-**Tabela filtrada por anos e crimes:**
+**Filtered table by years and crimes:**
 
-![Tabela filtrada](assets/2.png)
+![Filtered Table](assets/2.png)
 
-**Gráfico de tendência de crimes:**
+**Crime trend chart:**
 
-![Gráfico de crimes](assets/3.png)
-
----
-
-## 📊 Bibliotecas Utilizadas
-
-* `pandas` - manipulação de dados
-* `numpy` - operações numéricas
-* `plotly` - visualização interativa
-* `streamlit` - construção do dashboard web
-* `openpyxl` - (caso queira exportar para Excel)
+![Crime Chart](assets/3.png)
 
 ---
 
-## 💡 Possíveis Melhorias
+## 📊 Libraries Used
 
-* Adicionar **mapa interativo** por município usando `folium`.
-* Incluir **estatísticas agregadas**, como média e variação percentual.
-* Exportação de gráficos e tabelas em **PDF/Excel**.
-* Melhorar layout e estilo do dashboard com `streamlit` ou `dash`.
-
----
-
-## ⚖️ Licença
-
-Este projeto é open-source e está disponível para **uso educacional e profissional**.
+* `pandas` - data manipulation
+* `numpy` - numerical operations
+* `plotly` - interactive visualizations
+* `streamlit` - web dashboard
+* `openpyxl` - (optional, for exporting to Excel)
 
 ---
 
-## 📌 Observações
+## 💡 Possible Improvements
 
-* O dashboard utiliza dados oficiais de crimes, mas algumas informações podem estar incompletas ou ausentes em determinados meses.
-* Sempre verifique a qualidade dos dados antes de tomar decisões baseadas neles.
+* Add an **interactive map** by municipality using `folium`.
+* Include **aggregated statistics**, like averages and percentage variations.
+* Export charts and tables to **PDF/Excel**.
+* Improve the dashboard layout and style using `streamlit` or `dash`.
 
-```
-```
+---
+
+## ⚖️ License
+
+This project is open-source and available for **educational and professional use**.
+
+---
+
+## 📌 Notes
+
+* The dashboard uses official crime data, but some information may be incomplete or missing for certain months.
+* Always check the data quality before making decisions based on it.
